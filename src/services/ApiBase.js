@@ -1,7 +1,7 @@
-import axios from 'axios'
+import axios from "axios";
 
 const ApiBase = axios.create({
-    baseURL: 'https://orquestra-api.herokuapp.com'
-})
+  baseURL: "https://osads.herokuapp.com",
+});
 
 export default ApiBase;
