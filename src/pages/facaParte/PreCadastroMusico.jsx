@@ -6,7 +6,8 @@ import {
   Col,
   Container,
   InputGroup,
-  FormControl,
+  Card,
+  FloatingLabel,
 } from "react-bootstrap";
 import { useNavigate } from "react-router";
 
@@ -52,69 +53,97 @@ const PreCadastroMusico = () => {
   return (
     <>
       <br />
-      <br />
       <Container>
         <Row>
-          <Col md={4} />
-          <Col md={4}>
-            <Form noValidate validated={validated} onSubmit={handleSubmit}>
-              <Row className="mb-3">
-                <Form.Group controlId="validationCustom01">
-                  <Form.Label>Insira o Email </Form.Label>
-                  <FormControl
-                    required
-                    type="email"
-                    placeholder="Email"
-                    onChange={(e) => setEmail(e.target.value)}
-                  />
+          <Col md={3} />
+          <Col md={6}>
+            <Card border="dark">
+              <Card.Header>Cadastro Músico - OSADS</Card.Header>
+              <Card.Body>
+                <br />
 
-                  <Form.Control.Feedback type="invalid">
-                    Por favor insira o email corretamente.
-                  </Form.Control.Feedback>
-                </Form.Group>
-              </Row>
-              <Row className="mb-3">
-                <Form.Group controlId="validationCustom03">
-                  <Form.Label>Senha</Form.Label>
-                  <FormControl
-                    type="password"
-                    placeholder="Senha"
-                    onChange={(e) => setSenha(e.target.value)}
-                    required
-                  />
-                  <Form.Control.Feedback type="invalid">
-                    Por favor insira a senha.
-                  </Form.Control.Feedback>
-                </Form.Group>
+                <Form noValidate validated={validated} onSubmit={handleSubmit}>
+                  <Row className="mb-3">
+                    <InputGroup controlId="validationCustom01">
+                      <FloatingLabel
+                        controlId="email"
+                        label="Insira seu e-mail:"
+                        className="col-md-12"
+                      >
+                        <Form.Control
+                          required
+                          type="email"
+                          placeholder="Email"
+                          onChange={(e) => setEmail(e.target.value)}
+                        />
+                        <Form.Control.Feedback type="invalid">
+                          Por favor insira o email corretamente.
+                        </Form.Control.Feedback>
+                      </FloatingLabel>
+                    </InputGroup>
+                  </Row>
 
-                <Form.Group controlId="validationCustom03">
-                  <Form.Label>Inserir novamente a senha</Form.Label>
-                  <InputGroup className="mb-3">
-                    <FormControl
-                      type={passwordShown ? "text" : "password"}
-                      onChange={(e) => setSenha1(e.target.value)}
-                      placeholder="Repetir Senha"
-                      required
-                    />
+                  <Row className="mb-3">
+                    <InputGroup controlId="validationCustom01">
+                      <FloatingLabel
+                        controlId="senha"
+                        label="Insira sua senha:"
+                        className="col-md-12"
+                      >
+                        <Form.Control
+                          type="password"
+                          placeholder="Senha"
+                          onChange={(e) => setSenha(e.target.value)}
+                          required
+                        />
+                        <Form.Control.Feedback type="invalid">
+                          Por favor insira a senha.
+                        </Form.Control.Feedback>
+                      </FloatingLabel>
+                    </InputGroup>
+                  </Row>
 
-                    <Button
-                      variant="outline-secondary"
-                      id="button-addon2"
-                      onClick={togglePassword}
-                    >
-                      Mostrar
-                    </Button>
-                    <Form.Control.Feedback type="invalid">
-                      Repita a senha novamente.
-                    </Form.Control.Feedback>
-                  </InputGroup>
-                </Form.Group>
-              </Row>
-
-              <Button type="submit" onChange={handleSubmit}>
-                Cadastrar
-              </Button>
-            </Form>
+                  <div>
+                    <InputGroup controlId="password" className="md-3">
+                      <FloatingLabel
+                        controlId="senha"
+                        label="Repita a senha:"
+                        className="w-75"
+                      >
+                        <Form.Control
+                          type={passwordShown ? "text" : "password"}
+                          onChange={(e) => setSenha1(e.target.value)}
+                          placeholder="Repetir Senha:"
+                          required
+                        />
+                      </FloatingLabel>
+                      <Button
+                        variant="outline-secondary"
+                        onClick={togglePassword}
+                        className="w-25"
+                      >
+                        Mostrar
+                      </Button>
+                    </InputGroup>
+                  </div>
+                  <br />
+                  <Row>
+                    <Col>
+                      <Button
+                        type="submit"
+                        onChange={handleSubmit}
+                        className="w-50"
+                      >
+                        Cadastrar
+                      </Button>
+                    </Col>
+                  </Row>
+                </Form>
+              </Card.Body>
+              <Card.Footer className="text-muted">
+                Transformando vidas através do louvor!
+              </Card.Footer>
+            </Card>
           </Col>
         </Row>
       </Container>
