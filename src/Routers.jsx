@@ -17,10 +17,11 @@ import Profile from "./pages/profile/profile";
 import MusicoRoute from "./components/MusicoRoute";
 import FacaParteAluno from "./pages/facaParte/FacaParteAluno";
 import GroupRoute from "./components/GroupRoute";
-import Teste from "./pages/Teste";
 import PreCadastroMusico from "./pages/facaParte/PreCadastroMusico";
 import GerenteInventario from "./pages/Gerente/inventario";
 import Home from "./pages/Home";
+import PreCadastroAluno from "./pages/facaParte/PreCadastroAluno";
+import FacaParteMusico from "./pages/facaParte/FacaParteMusico";
 
 const Routers = () => {
   return (
@@ -33,10 +34,11 @@ const Routers = () => {
         <Route path="/facaparte" element={<FacaParte />} />
         <Route path="/contato" element={<Contato />} />
         <Route path="/agenda" element={<Agenda />} />
-        <Route path="/teste" element={<PreCadastroMusico />} />
-        <Route path="/teste2" element={<Teste />} />
 
-        <Route path="/facaparte/musico" element={<PreCadastroMusico />} />
+        <Route path="/pre/aluno" element={<PreCadastroAluno />} />
+        <Route path="/pre/musico" element={<PreCadastroMusico />} />
+
+        <Route path="/facaparte/musico" element={<FacaParteMusico />} />
         <Route path="/facaparte/aluno" element={<FacaParteAluno />} />
 
         <Route path="/partituras" element={<MusicoRoute />}>

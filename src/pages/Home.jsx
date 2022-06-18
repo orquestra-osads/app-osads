@@ -1,5 +1,5 @@
 import React from "react";
-import { Carousel, Col, Container, Row } from "react-bootstrap";
+import { Carousel, Card, Col, Container, Row } from "react-bootstrap";
 import Foto_1 from "../img/Foto_1.jpeg";
 import Foto_2 from "../img/Foto_2.jpeg";
 import Foto_3 from "../img/Foto_3.jpeg";
@@ -53,6 +53,18 @@ const Home = () => {
             </Carousel>
             <br />
             <h5>Conheça nossa redes sociais:</h5>
+            <br />
+            <Card>
+              <Card.Body className="btn btn-dark"><a className="nav-link text-light" target={'_blank'} rel='noreferrer' href="https://www.instagram.com/orquestra_osads/">Instagram</a></Card.Body>
+            </Card>
+            <br />
+            <Card>
+              <Card.Body className="btn btn-danger"><a className="nav-link text-light" target={'_blank'} rel='noreferrer' href="https://www.youtube.com/channel/UCyYzXrdeibCSl8MGXBOIkbw">Youtube</a></Card.Body>
+            </Card>
+            <br />
+            <Card>
+            <Card.Body className="btn btn-primary"><a className="nav-link text-light" target={'_blank'} rel='noreferrer' href="https://www.facebook.com/OrquestraOsads">Facebook</a></Card.Body>
+            </Card> 
           </Col>
 
           <Col md={6} className="lead" align="justify">
@@ -88,8 +100,8 @@ const Home = () => {
               missionário em hospitais, casa de recuperação, asilos, etc.
             </p>
             <p>
-              Atualmente a igreja está sendo pastoreada pelo amado pastor Jonas
-              Gonçalves que também apoia a orquestra sem medir esforços.
+            Atualmente a igreja está sendo pastoreada pelo amado pastor Saulo Gonçalves 
+            que também apoia a orquestra sem medir esforços.
             </p>
           </Col>
         </Row>

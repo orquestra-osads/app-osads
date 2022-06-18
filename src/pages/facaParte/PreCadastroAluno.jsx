@@ -11,7 +11,7 @@ import {
 } from "react-bootstrap";
 import { useNavigate } from "react-router";
 
-const PreCadastroMusico = () => {
+const PreCadastroAluno = () => {
   const [email, setEmail] = useState(null);
   const [senha, setSenha] = useState("");
   const [senha1, setSenha1] = useState("");
@@ -39,7 +39,7 @@ const PreCadastroMusico = () => {
         email: email,
         senha: senha,
       };
-      navigate("/facaparte/musico", { state: { pre } });
+      navigate("/facaparte/aluno", { state: { pre } });
     } else {
       alert("Senhas Diferentes", window.location.reload(false));
     }
@@ -58,7 +58,7 @@ const PreCadastroMusico = () => {
           <Col md={3} />
           <Col md={6}>
             <Card border="dark">
-              <Card.Header>Cadastro Músico - OSADS</Card.Header>
+              <Card.Header>Cadastro Aluno - OSADS</Card.Header>
               <Card.Body>
                 <br />
 
@@ -151,4 +151,4 @@ const PreCadastroMusico = () => {
   );
 };
 
-export default PreCadastroMusico;
+export default PreCadastroAluno;

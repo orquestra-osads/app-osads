@@ -13,9 +13,9 @@ import {
 import { useForm } from "react-hook-form";
 import { useLocation } from "react-router";
 import { useNavigate } from "react-router";
-import ApiBase from "../services/ApiBase";
+import ApiBase from "../../services/ApiBase";
 import { mask, unMask } from "remask";
-import apiCep from "../services/ApiCep";
+import apiCep from "../../services/ApiCep";
 
 const FacaParteMusico = () => {
   const navigate = useNavigate();
@@ -120,7 +120,9 @@ const FacaParteMusico = () => {
         <Row>
           <Col>
             <Card>
-              <Card.Header align="left">Cadastro Completo</Card.Header>
+              <Card.Header align="left">
+                Cadastro Músico Completo - OSADS
+              </Card.Header>
               <Card.Body align="left">
                 <Card.Text>
                   <Form onSubmit={handleSubmit}>
@@ -185,8 +187,27 @@ const FacaParteMusico = () => {
                               {...register("instrumento")}
                             >
                               <option>Selecione o Instrumento</option>
-                              <option value="Violino1">Violino 1</option>
-                              <option value="Trompete2">Trompete 1</option>
+                              <option value="Baixo">Baixo</option>
+                              <option value="Bateria">Bateria</option>
+                              <option value="Clarinete 1">Clarinete 1</option>
+                              <option value="Clarinete 2">Clarinete 2</option>
+                              <option value="Flauta 1">Flauta 1</option>
+                              <option value="Flauta 2">Flauta 2</option>
+                              <option value="Guitarra">Guitarra</option>
+                              <option value="Maestro">Maestro</option>
+                              <option value="Saxofone 1">Saxofone 1</option>
+                              <option value="Saxofone 2">Saxofone 2</option>
+                              <option value="Saxofone Tenor">Saxofone Tenor</option>
+                              <option value="Teclado">Teclado</option>
+                              <option value="Trombone">Trombone</option>
+                              <option value="Trompete 1">Trompete 1</option>
+                              <option value="Trompete 2">Trompete 2</option>
+                              <option value="Tuba">Tuba</option>
+                              <option value="Violão">Violão</option>
+                              <option value="Violino 1">Violino 1</option>
+                              <option value="Violino 2">Violino 2</option>
+                              <option value="Violoncello">Violoncello</option>
+                              
                             </Form.Select>
                           </Form.Group>
                         </Col>
@@ -319,12 +340,13 @@ const FacaParteMusico = () => {
                         </Col>
 
                         <Col md={5} />
-                        <Col md={2} align="center">
+                        <Col md={12} align="center">
                           <br />
                           <Button
                             variant="primary"
                             onClick={() => handleShow()}
                             onChange={handleSubmit(enviarDados)}
+                            className="w-50"
                           >
                             Cadastrar
                           </Button>
@@ -383,6 +405,7 @@ const FacaParteMusico = () => {
           </Button>
         </Modal.Footer>
       </Modal>
+      <br />
     </>
   );
 };

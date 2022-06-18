@@ -180,7 +180,9 @@ const GerenteMusicos = () => {
   return (
     <>
       <br />
-      <p>Gerente de Músicos</p>
+
+      <h2>Músicos</h2>
+
       <br />
       <Container>
         <Row>

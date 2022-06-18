@@ -51,17 +51,131 @@ export default function Login() {
 
         if (result.data.user._role === "Musico") {
           window.location.reload(navigate("/partituras"));
-          if (result.data.user.instrumento === "Violino1") {
+
+          //pastas e instrumentos 
+
+          if (result.data.user.instrumento === "Baixo") {
             sessionStorage.setItem(
               "pasta",
-              "137f2Qp_HkzvIAF4NJF8d4VnnJRWMfcyq"
+              "15ALzwsptsvBcSiC0RWubT2oYQjfEKC86"
             );
-          } else if (result.data.user.instrumento === "Trompete2") {
+          } 
+          else if (result.data.user.instrumento === "Bateria") {
+            sessionStorage.setItem(
+              "pasta",
+              "1azbwyviVPkclvCxbRnwhMHHiEd7zI6LR"
+            );
+          }
+          else if (result.data.user.instrumento === "Clarinete 1") {
+            sessionStorage.setItem(
+              "pasta",
+              "14vHnCqUALFSUxSKtxVE27gvO91jKCu7K"
+            );
+          }
+          else if (result.data.user.instrumento === "Clarinete 2") {
+            sessionStorage.setItem(
+              "pasta",
+              "1jgRXQ46K0cfOh0uwWRnGztmNtk_VyN4K"
+            );
+          }
+          else if (result.data.user.instrumento === "Flauta 1") {
+            sessionStorage.setItem(
+              "pasta",
+              "1ZeJ4sgus35ExH3vz7vWHkw3GNAZHC9rx"
+            );
+          }
+          else if (result.data.user.instrumento === "Flauta 2") {
+            sessionStorage.setItem(
+              "pasta",
+              "1438j7_O3ioPObVeJKGPqLeA0rJrh0u"
+            );
+          }
+          else if (result.data.user.instrumento === "Guitarra") {
+            sessionStorage.setItem(
+              "pasta",
+              "17uPbYTpXVFyPTOsBEB3h4gqW2EmUBxrm"
+            );
+          }
+          else if (result.data.user.instrumento === "Maestro") {
+            sessionStorage.setItem(
+              "pasta",
+              "18JLuw2m_TaPEjD3R6DH5JNFX5AXg8i4a"
+            );
+          }
+          else if (result.data.user.instrumento === "Saxofone 1") {
+            sessionStorage.setItem(
+              "pasta",
+              "1loSFj6cPyP27Nq_Dptgd_FbGwKoXGCQD"
+            );
+          }
+          else if (result.data.user.instrumento === "Saxofone 2") {
+            sessionStorage.setItem(
+              "pasta",
+              "1YbOPt_RDT0O7Q2WVhMfjNeYzTN5Q2fQG"
+            );
+          }
+          else if (result.data.user.instrumento === "Saxofone Tenor") {
+            sessionStorage.setItem(
+              "pasta",
+              "1qZ39EWPtlTFcHwo_LuRmFeBaLoiqsDDB"
+            );
+          }
+          else if (result.data.user.instrumento === "Teclado") {
+            sessionStorage.setItem(
+              "pasta",
+              "15-Lqp-TNYgb1ZScIl0eTFpcijaLCtbUO"
+            );
+          }
+          else if (result.data.user.instrumento === "Trombone") {
+            sessionStorage.setItem(
+              "pasta",
+              "1Svg5Hp61oOFh5LDCxXgSn1rBl2fyGM9P"
+            );
+          }
+          else if (result.data.user.instrumento === "Trompete 1") {
             sessionStorage.setItem(
               "pasta",
               "1NBEML7aXEdDYkSSEfNpD8xcDPLG1EEpR"
             );
+          }          
+          else if (result.data.user.instrumento === "Trompete 2") {
+            sessionStorage.setItem(
+              "pasta",
+              "1tVGH4lwd6lMqkFsbg55OvryGeCvcl-qo"
+            );
           }
+          else if (result.data.user.instrumento === "Tuba") {
+            sessionStorage.setItem(
+              "pasta",
+              "1F0n-vMADtCHnxgWOCZQ_GROb7-8Z0F4Q"
+            );
+          }
+          else if (result.data.user.instrumento === "Violão") {
+            sessionStorage.setItem(
+              "pasta",
+              "1_CRDnLOnbq047ODtRQGPekoViYnUG_f7"
+            );
+          }
+          else if (result.data.user.instrumento === "Violino 1") {
+            sessionStorage.setItem(
+              "pasta",
+              "137f2Qp_HkzvIAF4NJF8d4VnnJRWMfcyq"
+            );
+          }
+          else if (result.data.user.instrumento === "Violino 2") {
+            sessionStorage.setItem(
+              "pasta",
+              "1py8AEAUeD7kNeqaoaIcWkIJEzLBrKMOT"
+            );
+          }
+          else if (result.data.user.instrumento === "Violoncello") {
+            sessionStorage.setItem(
+              "pasta",
+              "1hLHhDZp1nDItE-uDI3qobWOTOlZuGfzv"
+            );
+          }
+
+
         } else if (result.data.user._role === "Admin") {
           window.location.reload(navigate("/orquestra/partituras"));
         }

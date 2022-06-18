@@ -126,7 +126,9 @@ const GerenteAlunos = () => {
   return (
     <>
       <br />
-      <p>Gerente de Alunos</p>
+
+      <h2>Alunos</h2>
+
       <br />
       <Container>
         <Row>

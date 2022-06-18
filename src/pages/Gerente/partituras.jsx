@@ -1,15 +1,5 @@
 import React, { useState } from "react";
-import {
-  Button,
-  Card,
-  CardGroup,
-  Col,
-  Container,
-  Form,
-  Modal,
-  Row,
-  Table,
-} from "react-bootstrap";
+import { Button, Card, Col, Container, Form, Modal, Row, Table } from "react-bootstrap";
 import ApiUpload from "../../services/ApiUpload";
 
 const GerentePartitura = () => {
@@ -30,12 +20,10 @@ const GerentePartitura = () => {
     const pasta = { folder: `${props}` }; //1bHqYWKtmZlENRtiD140CHeOMt4-NW4q9
     console.log(pasta);
     setFolderID(props);
-    ApiUpload.post("/upload/list", { pasta })
-      .then((result) => {
+    ApiUpload.post("/upload/list", { pasta }).then((result) => {
         setDetalhes(result.data);
         console.log(result.data);
-      })
-      .catch((error) => {
+      }).catch((error) => {
         console.log(error);
       });
     setShow(true);
@@ -61,8 +49,7 @@ const GerentePartitura = () => {
     ApiUpload.post(`/upload/folder/${folderId.folder}`, formData)
       .then((result) => {
         console.log("Success: ", result, handleShow(folderID));
-      })
-      .catch((error) => {
+      }).catch((error) => {
         console.log(error);
       });
   };
@@ -73,78 +60,350 @@ const GerentePartitura = () => {
       .then((response) => response.json(handleShow(folderID)))
       .then((result) => {
         alert(result);
-      })
-      .catch((error) => {
+      }).catch((error) => {
         console.error("Error: ", error);
       });
   };
 
   return (
     <>
-      <p>Maestro</p>
+      <br />
+
+      <h2>Partituras</h2>
 
       <br />
-      {
-        //teste modal
-      }
+           
       <>
         <Container>
           <Row>
-            {
-              //violino
-            }
-            <CardGroup>
-              <Col md={4}>
-                <Card border="dark" className="mb-3" style={{ width: "18rem" }}>
-                  <Card.Img
-                    variant="top"
-                    className="test"
-                    onClick={() =>
-                      handleShow("137f2Qp_HkzvIAF4NJF8d4VnnJRWMfcyq")
-                    }
-                    src="https://www.superprof.com.br/blog/wp-content/uploads/2018/11/encontrar-professor-de-violino-1060x707.jpg"
-                    style={{ height: "200px" }}
-                  />
+            
+            <Container>
+              <Row xs={1} md={2} className="g-3">
+                <Col md={3}>
+                  <Card border="dark">
+                    <Card.Header>Baixo</Card.Header>
+                    <Card.Body>
+                      <Button
+                        className="bt bt-danger"
+                        variant="info"
+                        onClick={() =>
+                          handleShow("15ALzwsptsvBcSiC0RWubT2oYQjfEKC86")
+                        }
+                      >
+                        Partituras Baixo
+                      </Button>
+                    </Card.Body>
+                  </Card>
+                </Col>
+              
+                <Col md={3}>
+                  <Card border="dark">
+                    <Card.Header>Bateria</Card.Header>
+                    <Card.Body>
+                      <Button
+                        className="bt bt-danger"
+                        variant="info"
+                        onClick={() =>
+                          handleShow("1azbwyviVPkclvCxbRnwhMHHiEd7zI6LR")
+                        }
+                      >
+                        Partituras Bateria
+                      </Button>
+                    </Card.Body>
+                  </Card>
+                </Col>
+
+                <Col md={3}>
+                <Card border="dark">
+                  <Card.Header>Clarinete 1</Card.Header>
                   <Card.Body>
                     <Button
                       className="bt bt-danger"
-                      variant="primary"
-                      onClick={() =>
-                        handleShow("137f2Qp_HkzvIAF4NJF8d4VnnJRWMfcyq")
-                      }
+                      variant="success"
+                      onClick={() => handleShow("14vHnCqUALFSUxSKtxVE27gvO91jKCu7K")}
                     >
-                      Partituras Violino 1
+                      Partituras Clarinete 1
                     </Button>
                   </Card.Body>
                 </Card>
-              </Col>
-              {
-                //trompete
-              }
-              <Col md={4}>
-                <Card border="dark" className="mb-3" style={{ width: "18rem" }}>
-                  <Card.Img
-                    variant="top"
-                    style={{ height: "200px" }}
-                    onClick={() =>
-                      handleShow("1NBEML7aXEdDYkSSEfNpD8xcDPLG1EEpR")
-                    }
-                    src="https://images.unsplash.com/photo-1511192336575-5a79af67a629?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8dHJ1bXBldHxlbnwwfHwwfHw%3D&w=1000&q=80"
-                  />
+                </Col>
+              
+                <Col md={3}>
+                <Card border="dark">
+                  <Card.Header>Clarinete 2</Card.Header>
                   <Card.Body>
                     <Button
                       className="bt bt-danger"
-                      variant="primary"
-                      onClick={() =>
-                        handleShow("1NBEML7aXEdDYkSSEfNpD8xcDPLG1EEpR")
-                      }
+                      variant="success"
+                      onClick={() => handleShow("1jgRXQ46K0cfOh0uwWRnGztmNtk_VyN4K")}
                     >
-                      Partituras Trompete
+                      Partituras Clarinete 2
                     </Button>
                   </Card.Body>
                 </Card>
-              </Col>
-            </CardGroup>
+                </Col>
+
+                <Col md={3}>
+                  <Card border="dark">
+                    <Card.Header>Flauta 1</Card.Header>
+                    <Card.Body>
+                      <Button
+                        className="bt bt-danger"
+                        variant="success"
+                        onClick={() =>
+                          handleShow("1ZeJ4sgus35ExH3vz7vWHkw3GNAZHC9rx")
+                        }
+                      >
+                        Partituras Flauta 1
+                      </Button>
+                    </Card.Body>
+                  </Card>
+                </Col>
+              
+                <Col md={3}>
+                  <Card border="dark">
+                    <Card.Header>Flauta 2</Card.Header>
+                    <Card.Body>
+                      <Button
+                        className="bt bt-danger"
+                        variant="success"
+                        onClick={() =>
+                          handleShow("1438j7_O3ioPObVeJKGPqLeA0rJrh0u")
+                        }
+                      >
+                        Partituras Flauta 2
+                      </Button>
+                    </Card.Body>
+                  </Card>
+                </Col>
+
+                <Col md={3}>
+                <Card border="dark">
+                  <Card.Header>Guitarra</Card.Header>
+                  <Card.Body>
+                    <Button
+                      className="bt bt-danger"
+                      variant="info"
+                      onClick={() => handleShow("17uPbYTpXVFyPTOsBEB3h4gqW2EmUBxrm")}
+                    >
+                      Partituras Guitarra
+                    </Button>
+                  </Card.Body>
+                </Card>
+                </Col>
+              
+                <Col md={3}>
+                <Card>
+                  <Card.Header>Maestro</Card.Header>
+                  <Card.Body>
+                    <Button
+                      className="bt bt-danger"
+                      variant="secondary"
+                      onClick={() => handleShow("18JLuw2m_TaPEjD3R6DH5JNFX5AXg8i4a")}
+                    >
+                      Partituras Maestro
+                    </Button>
+                  </Card.Body>
+                </Card>
+                </Col>
+
+                <Col md={3}>
+                  <Card border="dark">
+                    <Card.Header>Saxofone 1</Card.Header>
+                    <Card.Body>
+                      <Button
+                        className="bt bt-danger"
+                        variant="warning"
+                        onClick={() =>
+                          handleShow("1loSFj6cPyP27Nq_Dptgd_FbGwKoXGCQD")
+                        }
+                      >
+                        Partituras Saxofone 1
+                      </Button>
+                    </Card.Body>
+                  </Card>
+                </Col>
+              
+                <Col md={3}>
+                  <Card border="dark">
+                    <Card.Header>Saxofone 2</Card.Header>
+                    <Card.Body>
+                      <Button
+                        className="bt bt-danger"
+                        variant="warning"
+                        onClick={() =>
+                          handleShow("1YbOPt_RDT0O7Q2WVhMfjNeYzTN5Q2fQG")
+                        }
+                      >
+                        Partituras Saxofone 2
+                      </Button>
+                    </Card.Body>
+                  </Card>
+                </Col>
+
+                <Col md={3}>
+                <Card border="dark">
+                  <Card.Header>Saxofone Tenor</Card.Header>
+                  <Card.Body>
+                    <Button
+                      className="bt bt-danger"
+                      variant="warning"
+                      onClick={() => handleShow("1qZ39EWPtlTFcHwo_LuRmFeBaLoiqsDDB")}
+                    >
+                      Partituras Saxofone Tenor
+                    </Button>
+                  </Card.Body>
+                </Card>
+                </Col>
+              
+                <Col md={3}>
+                <Card border="dark">
+                  <Card.Header>Teclado</Card.Header>
+                  <Card.Body>
+                    <Button
+                      className="bt bt-danger"
+                      variant="info"
+                      onClick={() => handleShow("15-Lqp-TNYgb1ZScIl0eTFpcijaLCtbUO")}
+                    >
+                      Partituras Teclado
+                    </Button>
+                  </Card.Body>
+                </Card>
+                </Col>
+
+                <Col md={3}>
+                  <Card border="dark">
+                    <Card.Header>Trombone</Card.Header>
+                    <Card.Body>
+                      <Button
+                        className="bt bt-danger"
+                        variant="dark"
+                        onClick={() =>
+                          handleShow("1Svg5Hp61oOFh5LDCxXgSn1rBl2fyGM9P")
+                        }
+                      >
+                        Partituras Trombone
+                      </Button>
+                    </Card.Body>
+                  </Card>
+                </Col>
+              
+                <Col md={3}>
+                  <Card border="dark">
+                    <Card.Header>Trompete 1</Card.Header>
+                    <Card.Body>
+                      <Button
+                        className="bt bt-danger"
+                        variant="dark"
+                        onClick={() =>
+                          handleShow("1NBEML7aXEdDYkSSEfNpD8xcDPLG1EEpR")
+                        }
+                      >
+                        Partituras Trompete 1
+                      </Button>
+                    </Card.Body>
+                  </Card>
+                </Col>
+
+                <Col md={3}>
+                <Card border="dark">
+                  <Card.Header>Trompete 2</Card.Header>
+                  <Card.Body>
+                    <Button
+                      className="bt bt-danger"
+                      variant="dark"
+                      onClick={() => handleShow("1tVGH4lwd6lMqkFsbg55OvryGeCvcl")}
+                    >
+                      Partituras Trompete 2
+                    </Button>
+                  </Card.Body>
+                </Card>
+                </Col>
+              
+                <Col md={3}>
+                <Card border="dark">
+                  <Card.Header>Tuba</Card.Header>
+                  <Card.Body>
+                    <Button
+                      className="bt bt-danger"
+                      variant="dark"
+                      onClick={() => handleShow("1F0n-vMADtCHnxgWOCZQ_GROb7-8Z0F4Q")}
+                    >
+                      Partituras Tuba
+                    </Button>
+                  </Card.Body>
+                </Card>
+                </Col>
+
+                <Col md={3}>
+                  <Card border="dark">
+                    <Card.Header>Violão</Card.Header>
+                    <Card.Body>
+                      <Button
+                        className="bt bt-danger"
+                        variant="info"
+                        onClick={() =>
+                          handleShow("1_CRDnLOnbq047ODtRQGPekoViYnUG_f7")
+                        }
+                      >
+                        Partituras Violão
+                      </Button>
+                    </Card.Body>
+                  </Card>
+                </Col>
+              
+                <Col md={3}>
+                  <Card border="dark">
+                    <Card.Header>Violino 1</Card.Header>
+                    <Card.Body>
+                      <Button
+                        className="bt bt-danger"
+                        variant="danger"
+                        onClick={() =>
+                          handleShow("137f2Qp_HkzvIAF4NJF8d4VnnJRWMfcyq")
+                        }
+                      >
+                        Partituras Violino 1
+                      </Button>
+                    </Card.Body>
+                  </Card>
+                </Col>
+
+                <Col md={3}>
+                <Card border="dark">
+                  <Card.Header>Violino 2</Card.Header>
+                  <Card.Body>
+                    <Button
+                      className="bt bt-danger"
+                      variant="danger"
+                      onClick={() => handleShow("1py8AEAUeD7kNeqaoaIcWkIJEzLBrKMOT")}
+                    >
+                      Partituras Violino 2
+                    </Button>
+                  </Card.Body>
+                </Card>
+                </Col>
+              
+                <Col md={3}>
+                <Card border="dark">
+                  <Card.Header>Violoncello</Card.Header>
+                  <Card.Body>
+                    <Button
+                      className="bt bt-danger"
+                      variant="danger"
+                      onClick={() => handleShow("1hLHhDZp1nDItE-uDI3qobWOTOlZuGfzv")}
+                    >
+                      Partituras Violoncello
+                    </Button>
+                  </Card.Body>
+                </Card>
+                </Col>
+
+
+              </Row>
+            </Container>
+
+           
           </Row>
         </Container>
       </>
@@ -240,9 +499,10 @@ const GerentePartitura = () => {
           </Container>
         </Modal.Body>
         <Modal.Footer>
-          <Button onClick={handleClose}>Close</Button>
+          <Button onClick={handleClose} variant="outline-primary">Fechar</Button>
         </Modal.Footer>
       </Modal>
+      <br />
     </>
   );
 };

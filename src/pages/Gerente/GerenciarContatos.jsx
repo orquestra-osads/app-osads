@@ -51,6 +51,10 @@ const GerenteContato = () => {
     return (
         <>
             <br />
+
+            <h2>Caixa de entrada</h2>
+
+            <br />
             <Container>
                 <Row>
                     <Col>
