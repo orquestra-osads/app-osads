@@ -357,7 +357,7 @@ const FacaParteMusico = () => {
                 </Card.Text>
               </Card.Body>
               <Card.Footer className="text-muted">
-                orquestra muito mais que música ...
+                Transformando vidas através do louvor!
               </Card.Footer>
             </Card>
           </Col>
