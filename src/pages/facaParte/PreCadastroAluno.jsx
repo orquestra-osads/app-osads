@@ -68,7 +68,7 @@ const PreCadastroAluno = () => {
                       <FloatingLabel
                         controlId="email"
                         label="Insira seu e-mail:"
-                        className="col-md-12"
+                        className="w-100"
                       >
                         <Form.Control
                           required
@@ -88,7 +88,7 @@ const PreCadastroAluno = () => {
                       <FloatingLabel
                         controlId="senha"
                         label="Insira sua senha:"
-                        className="col-md-12"
+                        className="w-100"
                       >
                         <Form.Control
                           type="password"

@@ -68,7 +68,7 @@ const PreCadastroMusico = () => {
                       <FloatingLabel
                         controlId="email"
                         label="Insira seu e-mail:"
-                        className="col-md-12"
+                        className="w-100"
                       >
                         <Form.Control
                           required
@@ -84,11 +84,12 @@ const PreCadastroMusico = () => {
                   </Row>
 
                   <Row className="mb-3">
+                    
                     <InputGroup controlId="validationCustom01">
                       <FloatingLabel
                         controlId="senha"
                         label="Insira sua senha:"
-                        className="col-md-12"
+                        className="w-100"
                       >
                         <Form.Control
                           type="password"
@@ -101,6 +102,7 @@ const PreCadastroMusico = () => {
                         </Form.Control.Feedback>
                       </FloatingLabel>
                     </InputGroup>
+                    
                   </Row>
 
                   <div>
