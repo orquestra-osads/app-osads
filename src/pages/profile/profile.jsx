@@ -226,7 +226,7 @@ const Profile = () => {
                               {...register("cep")}
                               mask="99.999-999"
                               placeholder="CEP"
-                              value={`${detalhes.endereco.cep}`}
+                              value={`${cep}`}
                               onChange={handleChange}
                               onBlur={handleCep}
                             />
@@ -239,7 +239,7 @@ const Profile = () => {
                             <Form.Control
                               type="text"
                               placeholder="Cidade"
-                              value={`${detalhes.endereco.cidade}`}
+                              value={`${cidade}`}
                               onChange={(e) => setCidade(e.target.value)}
                             />
                           </Form.Group>
@@ -250,7 +250,7 @@ const Profile = () => {
                             <Form.Control
                               type="text"
                               placeholder="Estado"
-                              value={`${detalhes.endereco.estado}`}
+                              value={`${estado}`}
                               onChange={(e) => setEstado(e.target.value)}
                             />
                           </Form.Group>
@@ -260,7 +260,7 @@ const Profile = () => {
                             <Form.Label>Logradouro</Form.Label>
                             <Form.Control
                               type="text"
-                              value={`${detalhes.endereco.logradouro}`}
+                              value={`${logradouro}`}
                               placeholder="Logradouro"
                               onChange={(e) => setLogradouro(e.target.value)}
                               {...register("logradouro")}
@@ -273,7 +273,7 @@ const Profile = () => {
                             <Form.Control
                               type="text"
                               placeholder="Número"
-                              value={`${detalhes.endereco.numero}`}
+                              value={`${numero}`}
                               onChange={(e) => setNumero(e.target.value)}
                             />
                           </Form.Group>
@@ -285,7 +285,7 @@ const Profile = () => {
                             <Form.Control
                               type="text"
                               placeholder="Complemento"
-                              value={`${detalhes.endereco.complemento}`}
+                              value={`${complemento}`}
                               onChange={(e) => setComplemento(e.target.value)}
                             />
                           </Form.Group>
