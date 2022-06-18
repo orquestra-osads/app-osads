@@ -65,6 +65,8 @@ const Home = () => {
             <Card>
             <Card.Body className="btn btn-primary"><a className="nav-link text-light" target={'_blank'} rel='noreferrer' href="https://www.facebook.com/OrquestraOsads">Facebook</a></Card.Body>
             </Card> 
+            <br />
+
           </Col>
 
           <Col md={6} className="lead" align="justify">
