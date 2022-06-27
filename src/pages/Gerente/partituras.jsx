@@ -18,13 +18,11 @@ const GerentePartitura = () => {
   };
   const handleShow = (props) => {
     const pasta = { folder: `${props}` }; //1bHqYWKtmZlENRtiD140CHeOMt4-NW4q9
-    console.log(pasta);
     setFolderID(props);
     ApiUpload.post("/upload/list", { pasta }).then((result) => {
         setDetalhes(result.data);
-        console.log(result.data);
       }).catch((error) => {
-        console.log(error);
+        console.error(error);
       });
     setShow(true);
     setId(pasta);
@@ -42,7 +40,6 @@ const GerentePartitura = () => {
 
   const onFileUpload = () => {
     const folderId = id;
-    console.log(folderId.folder);
     const formData = new FormData();
     formData.append("myFile", state.selectedFile, state.selectedFile.name);
 
@@ -50,7 +47,7 @@ const GerentePartitura = () => {
       .then((result) => {
         console.log("Success: ", result, handleShow(folderID));
       }).catch((error) => {
-        console.log(error);
+        console.error(error);
       });
   };
 

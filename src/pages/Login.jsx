@@ -2,14 +2,7 @@ import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import { useNavigate } from "react-router";
-import {
-  Card,
-  Col,
-  Container,
-  FloatingLabel,
-  InputGroup,
-  Row,
-} from "react-bootstrap";
+import { Card, Col, Container, FloatingLabel, InputGroup, Row } from "react-bootstrap";
 import ApiBase from "../services/ApiBase";
 
 export default function Login() {
@@ -37,17 +30,14 @@ export default function Login() {
 
   const login = (data) => {
     console.clear();
-    console.log(data);
 
     ApiBase.post("/login", { data })
       .then((result) => {
-        console.log(result);
         sessionStorage.setItem("_id", result.data.user._id);
         sessionStorage.setItem("token", result.data.token);
         sessionStorage.setItem("instrumento", result.data.user.instrumento);
         sessionStorage.setItem("_role", result.data.user._role);
         sessionStorage.setItem("email", result.data.user.email);
-        console.log("Resultado: ", result.data);
 
         if (result.data.user._role === "Musico") {
           window.location.reload(navigate("/partituras"));

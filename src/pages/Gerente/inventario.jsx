@@ -1,15 +1,5 @@
 import React, { useEffect, useState } from "react";
-import {
-  Accordion,
-  Button,
-  Card,
-  Col,
-  Container,
-  Form,
-  Modal,
-  Row,
-  Table,
-} from "react-bootstrap";
+import { Accordion, Button, Card, Col, Container, Form, Modal, Row, Table } from "react-bootstrap";
 import ApiBase from "../../services/ApiBase";
 
 const GerenteInventario = () => {
@@ -26,11 +16,10 @@ const GerenteInventario = () => {
       },
     })
       .then((data) => {
-        console.log(data.data.bem);
         setDetalhes(data.data.bem);
       })
       .catch((error) => {
-        console.log(error);
+        console.error(error);
       });
     setShow(true);
   };
@@ -46,11 +35,10 @@ const GerenteInventario = () => {
       },
     })
       .then((result) => {
-        console.log(result.data.inventario);
         setIventario(result.data.inventario);
       })
       .catch((error) => {
-        console.log(error);
+        console.error(error);
       });
     ApiBase.get("/musicos", {
       headers: {
@@ -58,7 +46,6 @@ const GerenteInventario = () => {
       },
     })
       .then((result) => {
-        console.log(result.data.musicos);
         setMusico(result.data.musicos);
       })
       .catch((error) => {
@@ -99,18 +86,14 @@ const GerenteInventario = () => {
         data: data,
       },
     };
-    console.log(novoBem);
-    ApiBase.post(
-      `/inventario`,
-      { novoBem },
+    ApiBase.post(`/inventario`, { novoBem },
       {
         headers: {
           Authorization: `Bearer ${token}`,
         },
       }
-    )
-      .then((response) => alert("Bem adicionado com sucesso"))
-      .catch((error) => {
+    ).then((response) => alert("Bem adicionado com sucesso")
+    ).catch((error) => {
         console.error("Error: ", error);
       });
   };

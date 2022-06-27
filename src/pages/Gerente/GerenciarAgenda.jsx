@@ -1,15 +1,7 @@
 import React, { useState } from "react";
 import FullCalendar from "@fullcalendar/react"; // must go before plugins
 import dayGridPlugin from "@fullcalendar/daygrid"; // a plugin!
-import {
-  Button,
-  Card,
-  Col,
-  Container,
-  Form,
-  Row,
-  Table,
-} from "react-bootstrap";
+import { Button, Card, Col, Container, Form, Row, Table } from "react-bootstrap";
 import { useEffect } from "react";
 import Acordion from "../../components/Acordion";
 import ApiBase from "../../services/ApiBase";
@@ -28,7 +20,7 @@ const GerenciarAgenda = () => {
         setEventis(result.data.events);
       })
       .catch((error) => {
-        console.log(error);
+        console.error(error);
       });
   }, []);
 

@@ -17,7 +17,7 @@ const Agenda = () => {
       setEventis(result.data.events)
       
     }).catch((error) => {      
-      console.log(error)
+      console.error(error)
     })
   },[])
 

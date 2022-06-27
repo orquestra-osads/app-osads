@@ -1,13 +1,5 @@
 import React, { useState } from "react";
-import {
-  Card,
-  Col,
-  Container,
-  Form,
-  FormControl,
-  InputGroup,
-  Row,
-} from "react-bootstrap";
+import { Card, Col, Container, Form, FormControl, InputGroup, Row } from "react-bootstrap";
 import ApiBase from "../services/ApiBase";
 import apiCep from "../services/ApiCep";
 import { mask, unMask } from "remask";
@@ -111,7 +103,7 @@ const Forms = (props) => {
 
     apiCep.get(`/ws/${valor}/json/`).then((resultado) => {
       const endereco = resultado.data;
-      console.log(endereco);
+
       setLogradouro(endereco.logradouro)
       setCep(valor)
       setValue("logradouro", endereco.logradouro);

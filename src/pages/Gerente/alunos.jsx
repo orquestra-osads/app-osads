@@ -14,10 +14,9 @@ const GerenteAlunos = () => {
         ApiBase.get('/alunos', {headers: {
           'Authorization' : `Bearer ${token}`
         }}).then((result) => {
-            console.log(result.data.alunos)
             setAlunos(result.data.alunos)
         }).catch((error) => {      
-          console.log(error)
+          console.error(error)
         })
       },[])
   
@@ -37,7 +36,6 @@ const GerenteAlunos = () => {
       ApiBase.get(`/alunos/${id}`, {headers: {
           'Authorization' : `Bearer ${token}` }})
           .then((response) => {
-              console.log(response.data.aluno)
               setDetalhes(response.data.aluno)
           })
           .catch((error)=>{
@@ -102,7 +100,6 @@ const GerenteAlunos = () => {
         senha: `${props.senha}`,        
         instrumento: `${props.instrumento}`      
     };
-    console.log(envioAluno);
 
     ApiBase.post(`/alunos`, {envioAluno}).then((response) =>
         alert("Aluno adicionado com sucesso!", window.location.reload(false))

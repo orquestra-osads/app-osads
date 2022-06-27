@@ -17,7 +17,6 @@ const Profile = () => {
         ApiBase.get(`/profile/${id}`, {headers: {
           'Authorization' : `Bearer ${token}`
         }}).then((result) => {
-            console.log(result.data.user)
             setDetalhes(result.data.user)
             setSenha(result.data.user.senha)
             setEmail(result.data.user.email)
@@ -28,7 +27,7 @@ const Profile = () => {
             setComplemento(result.data.user.endereco.complemento)
             setLogradouro(result.data.user.endereco.logradouro)
         }).catch((error) => {      
-          console.log(error)
+          console.error(error)
         })
   },[])
   
@@ -102,7 +101,6 @@ const Profile = () => {
 
     apiCep.get(`/ws/${valor}/json/`).then((resultado) => {
       const endereco = resultado.data;
-      console.log(endereco);
       setCep(valor)
       setValue("logradouro", endereco.logradouro);
       setValue("complemento", endereco.complemento);

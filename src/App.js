@@ -6,8 +6,6 @@ import MenuMusico from './components/MenuMusico';
 import MenuSimples from './components/MenuSimples';
 import Routers from './Routers';
 
-
-
 function App() {
 
   const role = sessionStorage.getItem('_role')

@@ -13,10 +13,9 @@ const GerenteContato = () => {
         ApiBase.get(`/contato/${id}`, {headers: {
             'Authorization' : `Bearer ${token}`}}
             ).then((data) => {
-                console.log(data.data.mensagem)
                 setDetalhes(data.data.mensagem);
             }).catch((error) => {      
-                console.log(error)
+                console.error(error)
             })
         setShow(true);
     };
@@ -28,10 +27,9 @@ const GerenteContato = () => {
         ApiBase.get('/contato', {headers: {
           'Authorization' : `Bearer ${token}`
         }}).then((result) => {
-            console.log(result.data.contatos)
             setContatos(result.data.contatos)
         }).catch((error) => {      
-          console.log(error)
+          console.error(error)
         })
     },[])
 

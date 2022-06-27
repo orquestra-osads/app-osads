@@ -1,14 +1,5 @@
 import React, { useState } from "react";
-import {
-  Button,
-  Form,
-  Row,
-  Col,
-  Container,
-  InputGroup,
-  Card,
-  FloatingLabel,
-} from "react-bootstrap";
+import { Button, Form, Row, Col, Container, InputGroup, Card, FloatingLabel } from "react-bootstrap";
 import { useNavigate } from "react-router";
 
 const PreCadastroAluno = () => {

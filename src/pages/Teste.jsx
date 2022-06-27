@@ -1,15 +1,5 @@
 import React, { useState } from "react";
-import {
-  Button,
-  Card,
-  Col,
-  Container,
-  Form,
-  FormControl,
-  InputGroup,
-  Modal,
-  Row,
-} from "react-bootstrap";
+import { Button, Card, Col, Container, Form, FormControl, InputGroup, Modal, Row } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { useLocation } from "react-router";
 import { useNavigate } from "react-router";
@@ -48,7 +38,6 @@ const Teste = () => {
   //consumindo os dados
   function enviarDados(dados) {
     if (state.pre.senha === senha) {
-      console.log(dados);
       addMusico(dados);
     } else {
       alert("Senha Incorreta");
@@ -75,7 +64,6 @@ const Teste = () => {
       instrumento: `${props.instrumento}`,
       form: `musico`,
     };
-    console.log(preMusico);
 
     ApiBase.post(`/forms`, { preMusico })
       .then((response) =>
@@ -96,7 +84,6 @@ const Teste = () => {
 
     apiCep.get(`/ws/${valor}/json/`).then((resultado) => {
       const endereco = resultado.data;
-      console.log(endereco);
 
       setValue("logradouro", endereco.logradouro);
       setValue("complemento", endereco.complemento);

@@ -15,25 +15,19 @@ const GerenteMusicos = () => {
       headers: {
         Authorization: `Bearer ${token}`,
       },
-    })
-      .then((result) => {
-        console.log(result.data.musicos);
+    }).then((result) => {
         setMusicos(result.data.musicos);
-      })
-      .catch((error) => {
-        console.log(error);
+    }).catch((error) => {
+        console.error(error);
       });
     ApiBase.get("/forms", {
       headers: {
         Authorization: `Bearer ${token}`,
       },
-    })
-      .then((result) => {
-        console.log(result.data.users);
+    }).then((result) => {
         setNovosMusicos(result.data.users);
-      })
-      .catch((error) => {
-        console.log(error);
+      }).catch((error) => {
+        console.error(error);
       });
   }, []);
 
@@ -45,38 +39,32 @@ const GerenteMusicos = () => {
     setShow(false);
     setDetalhes(0);
   };
+
   const handleShow = (props) => {
     const id = props;
-    console.log(id);
     const token = sessionStorage.getItem("token");
     ApiBase.get(`/musicos/${id}`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
-    })
-      .then((response) => {
-        console.log(response.data.musico);
+    }).then((response) => {
         setDetalhes(response.data.musico);
-      })
-      .catch((error) => {
+      }).catch((error) => {
         console.error("Error: ", error);
       });
     setShow(true);
   };
+
   const handleShow2 = (props) => {
     const id = props;
-    console.log(id);
     const token = sessionStorage.getItem("token");
     ApiBase.get(`/forms/${id}`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
-    })
-      .then((response) => {
-        console.log(response.data.user);
+    }).then((response) => {
         setDetalhes(response.data.user);
-      })
-      .catch((error) => {
+      }).catch((error) => {
         console.error("Error: ", error);
       });
     setShow(true);
@@ -84,18 +72,15 @@ const GerenteMusicos = () => {
 
   //excluir músico
   const excluir = (id) => {
-    console.log(id);
     const token = sessionStorage.getItem("token");
     ApiBase.delete(`/musicos/${id}`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
-    })
-      .then((response) =>
+    }).then((response) =>
         alert(response.data.message, window.location.reload(false))
-      )
-      .catch((error) => {
-        console.log(error);
+      ).catch((error) => {
+        console.error(error);
       });
   };
 
@@ -108,8 +93,7 @@ const GerenteMusicos = () => {
       headers: {
         Authorization: `Bearer ${token}`,
       },
-    })
-      .then((response) => {
+    }).then((response) => {
         setDetalhes(response.data.user);
         const envioMusico = {
           nome: `${response.data.user.nome}`,
@@ -131,9 +115,7 @@ const GerenteMusicos = () => {
           instrumento: `${response.data.user.instrumento}`,
         };
         ApiBase.post(`/musicos`, { envioMusico })
-          .then(
-            (response) =>
-              alert(
+          .then((response) => alert(
                 "Músico adicionado com sucesso!",
                 window.location.reload(false)
               ),
@@ -141,19 +123,15 @@ const GerenteMusicos = () => {
               headers: {
                 Authorization: `Bearer ${token}`,
               },
-            })
-              .then((response) => {
-                console.log(response);
+            }).then((response) => {
+                console.log('ok');
+              }).catch((error) => {
+                console.error(error);
               })
-              .catch((error) => {
-                console.log(error);
-              })
-          )
-          .catch((error) => {
+          ).catch((error) => {
             console.error("Error: ", error);
           });
-      })
-      .catch((error) => {
+      }).catch((error) => {
         console.error("Error: ", error);
       });
   }
@@ -168,12 +146,10 @@ const GerenteMusicos = () => {
       headers: {
         Authorization: `Bearer ${token}`,
       },
-    })
-      .then((response) =>
+    }).then((response) =>
         alert(response.data.message, window.location.reload(false))
-      )
-      .catch((error) => {
-        console.log(error);
+      ).catch((error) => {
+        console.error(error);
       });
   }
 

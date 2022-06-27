@@ -19,11 +19,9 @@ const Contato = () => {
 
     function novoEvento (props){
         const contato = props
-        console.log(props)
         ApiBase.post(`/contato`, {contato})
         .then((response) => alert('Contato enviado! Aguarde e entraremos em contato.', navigate('/home')))
         .catch((error)=>{
-            console.log(error)
             console.error('Error: ', error)
         })  
 

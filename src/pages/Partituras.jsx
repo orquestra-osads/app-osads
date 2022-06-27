@@ -9,17 +9,15 @@ const Partituras = () => {
 
   useEffect(() => {
     const idpasta = sessionStorage.getItem("pasta");
-    console.log(idpasta);
     const pasta = { folder: `${idpasta}` }; //1bHqYWKtmZlENRtiD140CHeOMt4-NW4q9
 
     ApiUpload.post("/upload/list", { pasta })
       .then((result) => {
-        console.log(result.data);
         setPartituras(result.data);
         setInstrumento(sessionStorage.getItem("instrumento"));
       })
       .catch((error) => {
-        console.log(error);
+        console.error(error);
       });
   }, []);
 
